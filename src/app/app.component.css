@@ -1,0 +1,18 @@
+.router-content::before {
+	content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../assets/background/sky-bg.jpg) no-repeat center center;
+    background-size: cover;
+    will-change: transform;
+    z-index: -1;
+}
+.router-content {
+	position: relative;
+	left: 270px;
+	width: 980px;
+	top:10px;
+}

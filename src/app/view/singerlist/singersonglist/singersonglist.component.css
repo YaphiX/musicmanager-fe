@@ -1,0 +1,106 @@
+.search-bar {
+  padding-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15);
+  line-height:70px;
+}
+.mat-table {
+  box-shadow: none;
+}
+.mat-table,.mat-paginator {
+  background-color: rgba(0,0,0,0);
+}
+.mat-header-cell {
+  color: white;
+}
+.mat-header-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.mat-cell {
+  color: white;
+  text-overflow: ellipsis;
+}
+.mat-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.example-container {
+  box-shadow: none;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15)
+}
+a {
+  cursor:pointer;
+  border-bottom: 1px solid white;
+  color: black;
+  text-decoration-line: none;
+  color: white;
+}
+.mat-raised-button {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color:white;
+}
+md-input-container {
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 150px;
+}
+button {
+	position: relative;
+	bottom: 5px;
+}
+.mat-column-songId {
+  width: 70px;
+}
+.mat-column-songName {
+  width: 120px;
+}
+.mat-column-cleanedSongName {
+  width: 120px;
+}
+.mat-column-singerId {
+  width: 70px;
+}
+.mat-column-singerName {
+  width: 100px;
+}
+.mat-column-cleanedSingerName {
+  width: 100px;
+}
+.mat-column-hotDegree {
+  width: 50px;
+}
+.mat-column-state {
+  width: 70px;
+}
+.mat-column-createTime {
+  width: 120px;
+}
+.mat-column-lastEditTime {
+  width: 120px;
+}
+.searchbysong {
+	display: inline-block;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-size: 20px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 400px;
+}

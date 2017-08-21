@@ -1,0 +1,68 @@
+<title-bar title="标签"></title-bar>
+
+<table>
+	<tr>
+		<th>名字</th>
+		<th>类别</th>
+		<th>imgurl</th>
+		<th>排序</th>
+		<th>状态</th>
+		<th>操作</th>
+	</tr>
+	<tr id="parent1" showChildren="true">
+		<td class="toggle" (click)="toggle('1')"><a>风格</a></td>
+		<td>分类方式</td>
+	</tr>
+	<tr name="children1">
+		<td>流行</td>
+		<td>标签名</td>
+		<td>查看</td>
+		<td>1</td>
+		<td>线上</td>
+		<td>
+			<a>修改</a>
+			<a>删除</a>
+			<a>下线</a>
+		</td>
+	</tr>
+	<tr name="children1">
+		<td>摇滚</td>
+		<td>标签名</td>
+		<td>查看</td>
+		<td>2</td>
+		<td>线上</td>
+		<td>
+			<a>修改</a>
+			<a>删除</a>
+			<a>下线</a>
+		</td>
+	</tr>
+	<tr name="children1">
+		<td>古典</td>
+		<td>标签名</td>
+		<td>查看</td>
+		<td>3</td>
+		<td>开发中</td>
+		<td>
+			<a>修改</a>
+			<a>删除</a>
+			<a>上线</a>
+		</td>
+	</tr>
+	<tr id="parent2" showChildren="true">
+		<td class="toggle" (click)="toggle('2')"><a>场景</a></td>
+		<td>分类方式</td>
+	</tr>
+	<tr name="children2">
+		<td>阅读</td>
+		<td>标签名</td>
+		<td>查看</td>
+		<td>1</td>
+		<td>线上</td>
+		<td>
+			<a>修改</a>
+			<a>删除</a>
+			<a>下线</a>
+		</td>
+	</tr>
+</table>

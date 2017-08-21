@@ -1,0 +1,17 @@
+.mat-select {
+	width: 220px;
+}
+.mat-raised-button {
+	margin: 20px;
+}
+.content {
+	line-height: 150px;
+	text-align: center;
+	vertical-align: center;
+}
+.button-group {
+	text-align: center;
+}	
+img {
+	margin-top: 10px;
+}

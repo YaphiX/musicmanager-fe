@@ -1,0 +1,74 @@
+<div>
+	<title-bar title="歌手列表"></title-bar>
+	<div class="search-bar">
+		<div class="searchbysong">
+			<md-input-container>
+			  	<input mdInput [(ngModel)]="this.singername" placeholder="歌手名" >
+			</md-input-container>
+			<button md-raised-button (click)="searchbysong()">查询</button>
+		</div>
+		<div class="searchbydate">
+			<md-input-container>
+			  <input mdInput [(ngModel)]="startdate" [mdDatepicker]="picker1" placeholder="选择起始日期">
+			  <md-datepicker-toggle  mdSuffix [for]="picker1"></md-datepicker-toggle >
+			</md-input-container>
+			<md-datepicker #picker1></md-datepicker>
+
+			<md-input-container>
+			  <input mdInput [(ngModel)]="enddate" [mdDatepicker]="picker2" placeholder="选择结束日期">
+			  <md-datepicker-toggle  mdSuffix [for]="picker2"></md-datepicker-toggle >
+			</md-input-container>
+			<md-datepicker #picker2></md-datepicker>
+			<button md-raised-button (click)="searchbydate()">筛选</button>
+		</div>
+		<button routerLink="/exportsingernlp" md-raised-button>导入nlp</button>
+	</div>
+	<div class="songlist-table">
+		<div class="example-container mat-elevation-z8">
+		  <md-table #table [dataSource]="dataSource">
+		    <ng-container cdkColumnDef="singerId">
+		      <md-header-cell *cdkHeaderCellDef> 歌手ID </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> <a (click)="gotoDetail(row.singerId)">{{row.singerId}}</a></md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="singerName">
+		      <md-header-cell *cdkHeaderCellDef> 歌手名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.singerName}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="cleanedSingerName">
+		      <md-header-cell *cdkHeaderCellDef> 洗后歌手名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.cleanedSingerName}} </md-cell>
+		    </ng-container>
+
+			<ng-container cdkColumnDef="singerAlias">
+		      <md-header-cell *cdkHeaderCellDef> 歌手别名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.singerAlias}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="createTime">
+		      <md-header-cell *cdkHeaderCellDef> 创建时间 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.createTime}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="action">
+		      <md-header-cell *cdkHeaderCellDef> 其他内容 </md-header-cell>
+		      <md-cell *cdkCellDef="let row">
+		      	<a routerLink="/singersonglist">歌曲列表</a>
+		      	<a routerLink="/similarsinger">相似歌手</a>
+		      </md-cell>
+		    </ng-container>
+
+		    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+		    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+		  </md-table>
+
+		  <md-paginator #paginator
+		                [length]="exampleDatabase.data.length"
+		                [pageIndex]="0"
+		                [pageSize]="5"
+		                [pageSizeOptions]="[5, 10, 25, 100]">
+		  </md-paginator>
+		</div>
+	</div>
+</div>

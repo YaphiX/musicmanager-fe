@@ -1,0 +1,29 @@
+<div *ngIf="data[0] == 'coverImage'; else elseBlock">
+	<div class="title">
+		<h3>封面url</h3>
+		<hr>
+	</div>
+	<div class="content">
+		<img src={{data[1]}}>
+	</div>
+</div>
+<ng-template #elseBlock>
+	<div class="title">
+		<h3>加入精选集</h3>
+		<hr>
+	</div>
+	<div class="content">
+		<md-select placeholder="请选择一个精选集" [(ngModel)]="selectedValue">
+		  <md-option value='流行'>
+		    流行
+		  </md-option>
+		  <md-option value='怀旧'>
+		    怀旧
+		  </md-option>
+		</md-select>
+	</div>
+	<div class="button-group">
+		<button md-raised-button md-dialog-close>取消</button>
+		<button md-raised-button (click)="addToSelectList()">添加</button>
+	</div>
+</ng-template>

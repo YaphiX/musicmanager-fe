@@ -1,0 +1,17 @@
+<div>
+	<div class="title">
+		<h3>修改引导语</h3>
+		<hr>
+	</div>
+	<div class="content">
+		<p class="mine">我的：</p>
+		<md-input-container class="guide-centence">
+		    <input mdInput #text maxlength="15" [(ngModel)] = 'textValue'>
+		    <md-hint align="end">{{text.value.length}} / 15</md-hint>
+		</md-input-container>
+	</div>
+	<div class="button-group">
+		<button md-raised-button md-dialog-close>取消</button>
+		<button md-raised-button (click)="saveGuide()">保存</button>
+	</div>
+</div>

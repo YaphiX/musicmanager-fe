@@ -1,0 +1,48 @@
+<div class="singerlist-detail">
+	<title-bar title="歌手列表"></title-bar>
+	<breadNav></breadNav>
+	<div class="singerdetail-content">
+		<div class="row">
+			<div><label>歌手ID：</label><span>{{json.singerId}}</span></div>
+			<div><label>歌手名：</label><span>{{json.singerName}}</span></div>
+			<div>
+				<div><label>洗后歌手名：</label></div>
+				<div class="cleanedSingerName-input">
+					<md-input-container>
+					  	<input mdInput [value]= "json.cleanedSingerName" [(ngModel)]="cleanedSingerName"/>
+					</md-input-container>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="singerAlias">
+				<div class="singerAlias-imgGroup">
+					<label>歌曲别名：</label>
+					<img (click)="addSingerAlias()" src="http://115.159.37.199/admindemo/assets/icon/plus.png">
+					<img (click)="clearSingerAlias()" src="http://115.159.37.199/admindemo/assets/icon/empty.png">
+				</div>
+				<!-- <button md-icon-button (click)="addSongAlias()">add</button>
+				<button md-icon-button (click)="clearSongAlias()">clear</button> -->
+			</div>
+			<div class="singerAlias-input">
+				<md-input-container *ngFor="let alias of singerAlias;let index=
+				index;trackBy:trackByIndex;">
+				  	<input mdInput [(ngModel)]="singerAlias[index]"/>
+				</md-input-container>
+			</div>
+		</div>
+		<div class="row">
+			<div><label>国家：</label><span>{{json.nation}}</span></div>
+			<div><label>年代：</label><span>{{json.period}}</span></div>
+			<div><label>创建时间：</label><span>{{json.createTime}}</span></div>
+		</div>
+		<div class="row">
+			<div><label>性别：</label><span>{{json.sex}}</span></div>
+			<div><label>类别：</label><span>{{json.singerClass}}</span></div>
+		</div>
+		<div class="button-group">
+			<button md-raised-button (click)="back()">取消</button>
+			<button md-raised-button (click)="submit()">保存</button>
+		</div>
+	</div>
+</div>

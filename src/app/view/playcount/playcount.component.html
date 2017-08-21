@@ -1,0 +1,59 @@
+<div>
+	<title-bar title="播放次数"></title-bar>
+	<div class="search-bar">
+		<div class="searchbysong">
+			<md-input-container>
+			  	<input mdInput [(ngModel)]="this.songname" placeholder="歌曲名" >
+			</md-input-container>
+			<md-input-container>
+			  	<input mdInput [(ngModel)]="this.singername" placeholder="歌手名" >
+			</md-input-container>
+			<button md-raised-button (click)="searchbysong()">查询</button>
+		</div>
+	</div>
+	<div class="songlist-table">
+		<div class="example-container mat-elevation-z8">
+		  <md-table #table [dataSource]="dataSource">
+		    <ng-container cdkColumnDef="songId">
+		      <md-header-cell *cdkHeaderCellDef> 歌曲ID </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> <a (click)="gotoDetail(row.songId)">{{row.songId}}</a> </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="songName">
+		      <md-header-cell *cdkHeaderCellDef> 歌曲名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.songName}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="singerId">
+		      <md-header-cell *cdkHeaderCellDef> 歌手ID </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.singerId}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="singerName">
+		      <md-header-cell *cdkHeaderCellDef> 歌手名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.singerName}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="playCount">
+		      <md-header-cell *cdkHeaderCellDef> 播放次数 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.playCount}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="state">
+		      <md-header-cell *cdkHeaderCellDef> 状态 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.state}} </md-cell>
+		    </ng-container>
+
+		    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+		    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+		  </md-table>
+
+		  <md-paginator #paginator
+		                [length]="exampleDatabase.data.length"
+		                [pageIndex]="0"
+		                [pageSize]="5"
+		                [pageSizeOptions]="[5, 10, 25, 100]">
+		  </md-paginator>
+		</div>
+	</div>
+</div>

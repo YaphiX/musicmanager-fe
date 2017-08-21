@@ -1,0 +1,61 @@
+img {
+	width: 13px;
+	position: relative;
+	top: 0px;
+	left: -30px;
+}
+.mat-icon {
+	position: relative;
+	float: right;
+	top: 7px;
+	right: 15px;
+	transition: transform 0.6s linear;
+}
+md-sidenav-container {
+	position: absolute;
+	min-height: 90vh;
+	top: 64px;
+	background-color: #282828;
+}
+md-sidenav div {
+	width: 220px;
+}
+md-sidenav div p {
+	-webkit-user-select: none; 
+	line-height: 42px;
+	font-weight: 500;
+	color: white;
+	padding-left: 60px;
+	font-size: 13px;
+	cursor: pointer;
+}
+md-sidenav div p:hover {
+	color: #00abff;
+	transition: color 0.2s ease;
+}
+
+md-sidenav div ul {
+	transition: height .5s;
+	overflow: hidden;
+}
+md-sidenav div li {
+	line-height: 30px;
+	vertical-align: center;
+	padding-left: 10px;
+	cursor: pointer;
+	color: rgba(0,0,0,.54);
+	outline:none;
+	text-decoration: none;
+	font-size: 13px;
+	padding-left: 76px;
+	color:white;
+}
+md-sidenav div li:hover {
+	color: #00abff;
+	transition: color 0.2s ease;
+}
+md-sidenav div li.active {
+	color: #ffffff;
+	background-color: #00abff;
+	transition: color 0.2s ease;
+}

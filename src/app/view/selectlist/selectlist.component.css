@@ -1,0 +1,108 @@
+.search-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15);
+  line-height:70px;
+  padding-left: 15px;
+}
+.search-bar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15);
+  line-height:70px;
+}
+.mat-table {
+  box-shadow: none;
+}
+.mat-table,.mat-paginator {
+  background-color: rgba(0,0,0,0);
+}
+.mat-header-cell {
+  flex:none;
+  color: white;
+}
+.mat-header-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.mat-cell {
+  flex:none;
+  color: white;
+  text-overflow: ellipsis;
+}
+.mat-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.example-container {
+  box-shadow: none;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15)
+}
+a {
+  cursor:pointer;
+  border-bottom: 1px solid white;
+  color: black;
+  text-decoration-line: none;
+  color: white;
+}
+.mat-raised-button {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color:white;
+}
+.searchgroup {
+	display: inline-block;
+	margin-right: 20px;
+}
+.selectlistname {
+	display: inline-block;
+  color: white;
+}
+.mat-column-songId {
+  width: 70px;
+}
+.mat-column-songName {
+  width: 120px;
+  color: white;
+}
+.mat-column-singerId {
+  width: 70px;
+}
+.mat-column-singerName {
+  width: 100px;
+}
+.mat-column-mp3Url {
+  width: 200px;
+}
+.mat-column-rank {
+  width: 70px;
+}
+.mat-column-createTime {
+  width: 120px;
+}
+.mat-column-lastEditTime {
+  width: 120px;
+}
+.songname {
+	display: inline-block;
+  color: white;
+}
+.mat-input-container {
+	width: 150px;
+}
+audio {
+	width: 170px;
+}
+audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 70px); 
+}

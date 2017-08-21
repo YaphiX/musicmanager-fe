@@ -1,0 +1,25 @@
+table {
+	font-size: 13px;
+	background-color: rgba(0,0,0,.15);
+	border-radius: 8px;
+	color: white;
+	width: 980px;
+}
+tr {
+	display: block;
+	border-bottom: 1px solid rgba(255,255,255,.15);
+}
+td,th {
+	display: inline-block;
+	width: 100px;
+	line-height: 40px;
+	text-align: center;
+	overflow: hidden;
+}
+.toggle {
+	cursor: pointer;
+}
+a {
+	cursor: pointer;
+	border-bottom: 1px solid white;
+}

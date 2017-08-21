@@ -1,0 +1,35 @@
+<div>
+	<title-bar title="歌曲列表"></title-bar>
+	<breadNav></breadNav>
+	<div class="exportNlp-button">
+		<button md-raised-button (click)="exportNlp()">导入NLP</button>
+	</div>
+	<div class="nlp-table">
+		<div class="example-container mat-elevation-z8">
+		  <md-table #table [dataSource]="dataSource">
+		    <ng-container cdkColumnDef="checkBox">
+		    	<md-header-cell *cdkHeaderCellDef><md-checkbox (click)="selectAll()"></md-checkbox></md-header-cell>
+		      	<md-cell *cdkCellDef="let row"><md-checkbox [(ngModel)]="row.checkBox" (click)="boxSelected(row)"></md-checkbox></md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="songName">
+		      <md-header-cell *cdkHeaderCellDef> 歌曲名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.songName}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="cleanedSongName">
+		      <md-header-cell *cdkHeaderCellDef> 洗后歌曲名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.cleanedSongName}} </md-cell>
+		    </ng-container>
+		    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+		    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+		  </md-table>
+		  <md-paginator #paginator
+		                [length]="exampleDatabase.data.length"
+		                [pageIndex]="0"
+		                [pageSize]="5"
+		                [pageSizeOptions]="[5, 10, 25, 100]">
+		  </md-paginator>
+		</div>
+	</div>
+</div>

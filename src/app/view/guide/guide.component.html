@@ -1,0 +1,33 @@
+<title-bar title="歌曲列表"></title-bar>
+<div class="detailsonglist-table">
+	<div class="example-container mat-elevation-z8">
+	  <md-table #table [dataSource]="dataSource">		
+		<ng-container cdkColumnDef="location">
+	      <md-header-cell *cdkHeaderCellDef> 位置 </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.location}} </md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="guideSentence">
+	      <md-header-cell *cdkHeaderCellDef> 引导语 </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.guideSentence}} </md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="action">
+	      <md-header-cell *cdkHeaderCellDef> 操作 </md-header-cell>
+	      <md-cell *cdkCellDef="let row">
+	      	<a (click)="openDialog(row.guideId)">修改</a>
+	      </md-cell>
+	    </ng-container>
+
+	    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+	    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+	  </md-table>
+
+	  <md-paginator #paginator
+	                [length]="exampleDatabase.data.length"
+	                [pageIndex]="0"
+	                [pageSize]="5"
+	                [pageSizeOptions]="[5, 10, 25, 100]">
+	  </md-paginator>
+	</div>
+</div>

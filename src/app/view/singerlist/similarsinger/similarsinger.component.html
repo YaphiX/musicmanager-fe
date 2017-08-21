@@ -1,0 +1,28 @@
+<div>
+	<title-bar title="歌手列表"></title-bar>
+	<breadNav></breadNav>
+	<div class="nlp-table">
+		<div class="example-container mat-elevation-z8">
+		  <md-table #table [dataSource]="dataSource">
+
+		    <ng-container cdkColumnDef="singerId">
+		      <md-header-cell *cdkHeaderCellDef> 歌手ID </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> <a (click)="gotoDetail(row.singerId)">{{row.singerId}}</a></md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="singerName">
+		      <md-header-cell *cdkHeaderCellDef> 歌手名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.singerName}} </md-cell>
+		    </ng-container>
+		    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+		    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+		  </md-table>
+		  <md-paginator #paginator
+		                [length]="exampleDatabase.data.length"
+		                [pageIndex]="0"
+		                [pageSize]="5"
+		                [pageSizeOptions]="[5, 10, 25, 100]">
+		  </md-paginator>
+		</div>
+	</div>
+</div>

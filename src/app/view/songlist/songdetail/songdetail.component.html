@@ -1,0 +1,133 @@
+<div class="songdetail">
+	<title-bar title="歌曲列表"></title-bar>
+	<breadNav></breadNav>
+	<div class="songdetail-content">
+		<div class="row">
+			<div><label>歌曲ID：</label><span>{{json.songId}}</span></div>
+			<div><label>歌曲名：</label><span>{{json.songName}}</span></div>
+			<div>
+				<div><label>洗后歌曲名：</label></div>
+				<div class="cleanedSingerName-input">
+					<md-input-container>
+					  	<input mdInput [value]= "json.cleanedSongName" [(ngModel)]="cleanedSongName"/>
+					</md-input-container>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="songAlias">
+				<div class="songAlias-imgGroup">
+					<label>歌曲别名：</label>
+					<img (click)="addSongAlias()" src="http://115.159.37.199/admindemo/assets/icon/plus.png">
+					<img (click)="clearSongAlias()" src="http://115.159.37.199/admindemo/assets/icon/empty.png">
+				</div>
+				<!-- <button md-icon-button (click)="addSongAlias()">add</button>
+				<button md-icon-button (click)="clearSongAlias()">clear</button> -->
+			</div>
+			<div class="songAlias-input">
+				<md-input-container *ngFor="let alias of songAlias;let index=
+				index;trackBy:trackByIndex;">
+				  	<input mdInput [(ngModel)]="songAlias[index]"/>
+				</md-input-container>
+			</div>
+		</div>
+		<div class="row">
+			<div><label>歌手ID：</label><span>{{json.singerId}}</span></div>
+			<div><label>歌手名：</label><span>{{json.singerName}}</span></div>
+			<div><label>洗后歌手名：</label><span>{{json.cleanedSingerName}}</span></div>
+		</div>
+		<div class="row">
+			<div class="singerAlias">
+				<label>歌手别名：</label>
+				<p *ngFor="let alia of json.singerAlias"><span>{{alia}}</span></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="hotDegree-row">
+				<div><label>热度：</label></div>
+				<div class="hotDegree-input">
+					<md-input-container>
+						<input mdInput [(ngModel)]="hotDegree"/>
+					</md-input-container>
+				</div>
+			</div>
+			<div><label>创建时间：</label><span>{{json.createTime}}</span></div>
+			<div><label>发布时间：</label><span>{{json.releaseTime}}</span></div>
+		</div>
+		<div class="row">
+			<div><label>分类：</label><span>{{json.songClass}}</span></div>
+			<div><label>标签：</label><span>{{json.songTag}}</span></div>
+			<div><label>语言：</label><span>{{json.language}}</span></div>
+		</div>
+		<div class="button-group">
+			<button md-raised-button (click)="back()">取消</button>
+			<button md-raised-button (click)="submit()">保存</button>
+		</div>
+	</div>
+	<div class="detailsonglist-table">
+		<div class="example-container mat-elevation-z8">
+		  <md-table #table [dataSource]="dataSource">
+		    <ng-container cdkColumnDef="thirdSongId">
+		      <md-header-cell *cdkHeaderCellDef> 第三方歌曲ID </md-header-cell>
+		      <md-cell *cdkCellDef="let row">{{row.thirdSongId}}</md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="songSource">
+		      <md-header-cell *cdkHeaderCellDef> 歌曲源 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.songSource}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="songName">
+		      <md-header-cell *cdkHeaderCellDef> 歌曲名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.songName}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="singerName">
+		      <md-header-cell *cdkHeaderCellDef> 歌手名 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.singerName}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="coverUrl">
+		      <md-header-cell *cdkHeaderCellDef> 封面url </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> <a (click)="openDialog(['coverImage',row.coverUrl])">查看</a></md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="hotDegree">
+		      <md-header-cell *cdkHeaderCellDef> 热度 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.hotDegree}} </md-cell>
+		    </ng-container>
+			
+			<ng-container cdkColumnDef="state">
+		      <md-header-cell *cdkHeaderCellDef> 歌曲状态 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.state}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="createTime">
+		      <md-header-cell *cdkHeaderCellDef> 创建时间 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.createTime}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="lastEditTime">
+		      <md-header-cell *cdkHeaderCellDef> 最后修改时间 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"> {{row.lastEditTime}} </md-cell>
+		    </ng-container>
+
+		    <ng-container cdkColumnDef="action">
+		      <md-header-cell *cdkHeaderCellDef> 加入精选集 </md-header-cell>
+		      <md-cell *cdkCellDef="let row"><a (click)="openDialog(row.thirdSongId)">添加</a></md-cell>
+		    </ng-container>
+
+		    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+		    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+		  </md-table>
+
+		  <md-paginator #paginator
+		                [length]="exampleDatabase.data.length"
+		                [pageIndex]="0"
+		                [pageSize]="5"
+		                [pageSizeOptions]="[5, 10, 25, 100]">
+		  </md-paginator>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,38 @@
+.mat-table {
+  box-shadow: none;
+}
+.mat-table,.mat-paginator {
+  background-color: rgba(0,0,0,0);
+}
+.mat-header-cell {
+  color: white;
+}
+.mat-header-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.mat-cell {
+  color: white;
+  text-overflow: ellipsis;
+}
+.mat-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.example-container {
+  box-shadow: none;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15)
+}
+
+.mat-checkbox-frame {
+	background-color: rgba(255,255,255,0.2);
+}
+.exportNlp-button {
+    float: right;
+    margin-top: 15px;
+}
+.mat-raised-button {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color:white;
+}

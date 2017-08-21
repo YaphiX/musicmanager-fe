@@ -1,0 +1,76 @@
+<title-bar title="榜单"></title-bar>
+<div class="search-bar">
+	<div class="searchgroup">
+		<md-select placeholder="请选择一个榜单" floatPlaceholder="never" [(ngModel)]="selectedValue">
+			<md-option *ngFor="let item of items" [value]="item.value">
+			{{ item.viewValue }}
+			</md-option>
+		</md-select>
+	</div>
+	<div class="searchgroup">
+		<md-input-container>
+		  	<input mdInput [(ngModel)]="songName" placeholder="歌曲名">
+		</md-input-container>
+	</div>
+	<button md-raised-button (click)="searchBySelectlist()">查询</button>
+</div>
+<div class="detailsonglist-table">
+	<div class="example-container mat-elevation-z8">
+	  <md-table #table [dataSource]="dataSource">
+	    <ng-container cdkColumnDef="songId">
+	      <md-header-cell *cdkHeaderCellDef> 歌曲ID </md-header-cell>
+	      <md-cell *cdkCellDef="let row">{{row.songId}}</md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="songName">
+	      <md-header-cell *cdkHeaderCellDef> 歌曲名 </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.songName}} </md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="singerId">
+	      <md-header-cell *cdkHeaderCellDef> 歌手ID </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.singerId}} </md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="singerName">
+	      <md-header-cell *cdkHeaderCellDef> 歌手名 </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.singerName}}</md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="mp3Url">
+	      <md-header-cell *cdkHeaderCellDef> 音频 </md-header-cell>
+	      <md-cell *cdkCellDef="let row">
+	      	<audio src="http://other.web.ra01.sycdn.kuwo.cn/resource/n3/128/65/76/2918555856.mp3" controls="controls"></audio>
+	      </md-cell>
+	    </ng-container>
+		
+		<ng-container cdkColumnDef="rank">
+	      <md-header-cell *cdkHeaderCellDef> 排名 </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.rank}} </md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="createTime">
+	      <md-header-cell *cdkHeaderCellDef> 入榜时间 </md-header-cell>
+	      <md-cell *cdkCellDef="let row"> {{row.createTime}} </md-cell>
+	    </ng-container>
+
+	    <ng-container cdkColumnDef="action">
+	      <md-header-cell *cdkHeaderCellDef> 修改 </md-header-cell>
+	      <md-cell *cdkCellDef="let row">
+	      	<a (click)="openDialog(['delete',row.songId])">删除</a>
+			<a (click)="openDialog([row.songId])">添加</a>
+	      	</md-cell>
+	    </ng-container>
+
+	    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+	    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+	  </md-table>
+
+	  <md-paginator #paginator
+	                [length]="exampleDatabase.data.length"
+	                [pageIndex]="0"
+	                [pageSize]="5"
+	                [pageSizeOptions]="[5, 10, 25, 100]">
+	  </md-paginator>
+	</div>
+</div>

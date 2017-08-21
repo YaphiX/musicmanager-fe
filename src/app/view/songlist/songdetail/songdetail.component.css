@@ -1,0 +1,177 @@
+
+.mat-table {
+  box-shadow: none;
+}
+.mat-table,.mat-paginator {
+  background-color: rgba(0,0,0,0);
+}
+.mat-header-cell {
+  color: white;
+  flex: none;
+}
+.mat-header-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.mat-cell {
+  flex: none;
+  color: white;
+  text-overflow: ellipsis;
+}
+.mat-row {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.songdetail-content {
+  box-shadow: none;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15);
+  color: white;
+}
+a {
+  cursor:pointer;
+  border-bottom: 1px solid white;
+  color: black;
+  text-decoration-line: none;
+  color: white;
+}
+.mat-raised-button {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color:white;
+}
+.example-container {
+  box-shadow: none;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,.15)
+}
+.songdetail {
+	width: 980px;
+}
+.button-group {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	text-align: right;
+}
+.row {
+	height: 25px;
+}
+.row div {
+	width: 300px;
+	display: inline-flex;
+}
+.row p {
+	display: inline-block;
+}
+.row-alias {
+	margin-bottom: 20px;
+	display: inline-flex;
+}
+.songAlias-imgGroup {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.songAlias img {
+	position: relative;
+	top: 5px;
+	width: 25px;
+	cursor: pointer;
+}
+.songAlias-input {
+	position: relative;
+	top:-15px;
+	margin-bottom: 10px;
+}
+.cleanedSingerName-input {
+	margin-left: -100px;
+	margin-top: -20px;
+}
+label {
+	width: auto;
+	text-align: center;
+}
+span {
+	width: auto;
+	padding-right: 10px;
+}
+
+.detailsonglist-table {
+	width: 100%;
+}
+.songdetail-content {
+	padding-top: 40px;
+	padding-left: 60px;
+	background-color: rgba(0,0,0,.15)
+}
+.mat-input-container {
+	width: 150px;
+	margin-right: 20px;
+	height: 20px;
+}
+.detailsonglist-table{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.detailsonglist-table {
+	width: 100%;
+}
+.mat-column-thirdSongId {
+  width: 100px;
+}
+.mat-column-songSource {
+  width: 80px;
+}
+.mat-column-songName {
+  width: 120px;
+}
+.mat-column-singerName {
+  width: 120px;
+}
+.mat-column-coverUrl {
+  width: 80px;
+}
+.mat-column-hotDegree {
+  width: 50px;
+}
+.mat-column-state {
+  width: 70px;
+}
+.mat-column-createTime {
+  width: 120px;
+}
+.mat-column-lastEditTime {
+  width: 120px;
+}
+.mat-column-action {
+  width: 100px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  font-size: 20px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 400px;
+}
+.singerAlias {
+	margin-bottom: 10px;
+}
+.hotDegree-input {
+	height: 20px;
+	margin-left: -200px;
+	margin-top: -20px;
+}
+.hotDegree-row {
+
+}

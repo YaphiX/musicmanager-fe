@@ -1,0 +1,61 @@
+<md-sidenav-container id="sidenav">
+  <md-sidenav #sidenav mode="side" opened="true">
+    <div id="music-sub">
+      <p id="music"
+         (click)="toggle('music','musicManage')" 
+         (mouseover)="changeSpanColor('change', 'music')" 
+         (mouseleave)="changeSpanColor('leave', 'music')">
+        <span ><img src="../../../assets/icon/music.png"></span>
+        歌曲管理
+        <md-icon svgIcon="arrow-down"></md-icon>
+      </p>
+      <ul id="musicManage">
+          <li routerLink="/songlist" routerLinkActive="active" >歌曲列表</li>
+          <li routerLink="/playcount" routerLinkActive="active" >播放次数</li>
+      </ul>
+    </div>
+
+    <div id="singer-sub">
+      <p id="singer"
+         (click)="toggle('singer', 'singerManage')" 
+         (mouseover)="changeSpanColor('change', 'singer')"
+         (mouseleave)="changeSpanColor('leave', 'singer')">
+        <span><img src="../../../assets/icon/singer.png"></span>
+        歌手管理
+        <md-icon svgIcon="arrow-down"></md-icon>
+      </p>
+      <ul id="singerManage">
+          <li routerLink="/singerlist" routerLinkActive="active">歌手列表</li>
+      </ul>
+    </div>
+
+    <div id="select-sub">
+      <p id="select"
+         (click)="toggle('select', 'selectManage')" 
+         (mouseover)="changeSpanColor('change', 'select')"
+         (mouseleave)="changeSpanColor('leave', 'select')">
+        <span><img src="../../../assets/icon/select.png"></span>
+        精选集管理
+        <md-icon svgIcon="arrow-down"></md-icon>
+      </p>
+      <ul id="selectManage">
+          <li routerLink="/selectlist" routerLinkActive="active">榜单</li>
+          <li routerLink="/selecttag" routerLinkActive="active">标签</li>
+      </ul>
+    </div>
+
+    <div id="app-sub">
+      <p id="app"
+         (click)="toggle('app', 'appGuideManage')" 
+         (mouseover)="changeSpanColor('change', 'app')"
+         (mouseleave)="changeSpanColor('leave', 'app')">
+        <span><img src="../../../assets/icon/app.png"></span>
+        APP上线管理
+        <md-icon svgIcon="arrow-down"></md-icon>
+      </p>
+      <ul id="appGuideManage">
+          <li  routerLink="/guide" routerLinkActive="active">引导语</li>
+      </ul>
+    </div>
+  </md-sidenav>
+</md-sidenav-container>

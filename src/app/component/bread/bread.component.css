@@ -1,0 +1,16 @@
+.bread-nav h5 {
+	display: inline-block;
+}
+.bread-nav {
+	display: inline-block;
+	line-height: 60px;
+	color:white;
+	opacity: 0.9;
+}
+.bread-link {
+	cursor: pointer;
+	outline: none;
+}
+.bread-link:hover {
+	color: #282828;
+}
